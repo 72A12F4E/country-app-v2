@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17162" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Border" representedClassName=".Border" syncable="YES" codeGenerationType="class">
+        <attribute name="value" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Country" representedClassName=".Country" syncable="YES" codeGenerationType="class">
+        <attribute name="alpha2Code" optional="YES" attributeType="String"/>
+        <attribute name="alpha3Code" optional="YES" attributeType="String"/>
+        <attribute name="area" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="capital" optional="YES" attributeType="String"/>
+        <attribute name="cioc" optional="YES" attributeType="String"/>
+        <attribute name="demonym" optional="YES" attributeType="String"/>
+        <attribute name="flag" optional="YES" attributeType="String"/>
+        <attribute name="gini" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="nativeName" attributeType="String"/>
+        <attribute name="numericCode" optional="YES" attributeType="String"/>
+        <attribute name="population" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="region" optional="YES" attributeType="String"/>
+        <attribute name="subregion" optional="YES" attributeType="String"/>
+        <relationship name="borders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Border"/>
+        <relationship name="currencies" toMany="YES" deletionRule="Nullify" destinationEntity="Currency"/>
+        <relationship name="languages" toMany="YES" deletionRule="Nullify" destinationEntity="Language"/>
+        <relationship name="regionalBlocs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RegionalBloc"/>
+        <relationship name="timezones" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Timezone"/>
+        <relationship name="translations" maxCount="1" deletionRule="Nullify" destinationEntity="Translations"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Currency" representedClassName=".Currency" syncable="YES" codeGenerationType="class">
+        <attribute name="code" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="symbol" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Language" representedClassName=".Language" syncable="YES" codeGenerationType="class">
+        <attribute name="iso6391" optional="YES" attributeType="String"/>
+        <attribute name="iso6392" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="nativeName" attributeType="String"/>
+    </entity>
+    <entity name="RegionalBloc" representedClassName=".RegionalBloc" syncable="YES" codeGenerationType="class">
+        <attribute name="acronym" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Timezone" representedClassName=".Timezone" syncable="YES" codeGenerationType="class">
+        <attribute name="value" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Translations" representedClassName=".Translations" syncable="YES" codeGenerationType="class">
+        <attribute name="br" optional="YES" attributeType="String"/>
+        <attribute name="de" optional="YES" attributeType="String"/>
+        <attribute name="es" optional="YES" attributeType="String"/>
+        <attribute name="fa" optional="YES" attributeType="String"/>
+        <attribute name="fr" optional="YES" attributeType="String"/>
+        <attribute name="hr" optional="YES" attributeType="String"/>
+        <attribute name="it" optional="YES" attributeType="String"/>
+        <attribute name="ja" optional="YES" attributeType="String"/>
+        <attribute name="nl" optional="YES" attributeType="String"/>
+        <attribute name="pt" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Border" positionX="0" positionY="54" width="128" height="58"/>
+        <element name="Country" positionX="-54" positionY="-9" width="128" height="373"/>
+        <element name="Currency" positionX="-36" positionY="27" width="128" height="88"/>
+        <element name="Language" positionX="-18" positionY="36" width="128" height="103"/>
+        <element name="RegionalBloc" positionX="0" positionY="54" width="128" height="73"/>
+        <element name="Timezone" positionX="-9" positionY="45" width="128" height="58"/>
+        <element name="Translations" positionX="36" positionY="90" width="128" height="193"/>
+    </elements>
+</model>
