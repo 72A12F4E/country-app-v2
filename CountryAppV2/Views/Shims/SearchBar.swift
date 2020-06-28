@@ -53,7 +53,9 @@ struct SearchBar: View {
                 Image(systemName: "magnifyingglass")
                 
                 TextField("search", text: $searchText, onEditingChanged: { isEditing in
-                    self.showCancelButton = true
+                    withAnimation {
+                        self.showCancelButton = true
+                    }
                 }, onCommit: { })
                 .foregroundColor(.primary)
                 

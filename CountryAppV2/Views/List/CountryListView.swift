@@ -20,12 +20,19 @@ struct CountryListView: View {
     )
     public var countries: FetchedResults<Country>
     
+    var filteredCountries: [Country] {
+        countries.filter {
+            searchText == "" ||
+                $0.name!.uppercased().contains(searchText.uppercased())
+        }
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
                 SearchBar(searchText: $searchText)
                 List {
-                    ForEach(countries.filter({ searchText == "" || $0.name!.uppercased().contains(searchText.uppercased()) }), id: \Country.name) { country in
+                    ForEach(filteredCountries, id: \Country.name) { country in
                         NavigationLink(destination: CountryDetailView(country: country)) {
                             Text(country.name!)
                         }
